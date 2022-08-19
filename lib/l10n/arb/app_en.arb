@@ -1,0 +1,6 @@
+{
+    "appName": "Football MVT",
+    "@appName": {
+        "description": "Name of the application"
+    }
+}
