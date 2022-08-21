@@ -1,3 +1,5 @@
+// coverage:ignore-file
+
 import 'package:dio/dio.dart';
 import 'package:football_mvp/core/domain/failure.dart';
 

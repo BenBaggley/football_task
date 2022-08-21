@@ -1,3 +1,5 @@
+// coverage:ignore-file
+
 import 'package:flutter/foundation.dart';
 
 /// Represents an error which should be handled

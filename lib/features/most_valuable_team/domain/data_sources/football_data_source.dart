@@ -4,7 +4,9 @@ import 'package:football_mvp/features/most_valuable_team/domain/entities/footbal
 import 'package:football_mvp/features/most_valuable_team/domain/entities/team.dart';
 import 'package:football_mvp/features/most_valuable_team/domain/enums/match_status.dart';
 
+/// Data source interface for football data
 abstract class FootballDataSource {
+  /// Gets matches for a given competition, date range and status
   Future<Either<Failure, List<FootballMatch>>> getMatches({
     required String competition,
     required DateTime dateFrom,
@@ -12,5 +14,6 @@ abstract class FootballDataSource {
     required MatchStatus status,
   });
 
+  /// Gets team details for a given id
   Future<Either<Failure, Team>> getTeam(int id);
 }

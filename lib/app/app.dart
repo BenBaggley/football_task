@@ -1,5 +1,6 @@
+// ignore_for_file:public_member_api_docs
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:football_mvp/app/app.config.dart';
 import 'package:football_mvp/app/routes.dart';
 import 'package:football_mvp/l10n/l10n.dart';
@@ -17,12 +18,7 @@ class FootballMVTApp extends StatefulWidget {
   static Future<void> run() async {
     WidgetsFlutterBinding.ensureInitialized();
 
-    initializeDependencies();
-
-    await SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    _initializeDependencies();
 
     runApp(const FootballMVTApp());
   }
@@ -48,4 +44,4 @@ class _FootballMVTAppState extends State<FootballMVTApp> {
 }
 
 @injectableInit
-void initializeDependencies() => $initGetIt(GetIt.I);
+void _initializeDependencies() => $initGetIt(GetIt.I);

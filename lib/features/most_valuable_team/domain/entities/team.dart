@@ -1,3 +1,5 @@
+import 'package:football_mvp/features/most_valuable_team/domain/entities/coach.dart';
+import 'package:football_mvp/features/most_valuable_team/domain/entities/player.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'team.freezed.dart';
@@ -20,6 +22,8 @@ class Team with _$Team {
     required int? founded,
     required String? clubColors,
     required String? venue,
+    required Coach coach,
+    required List<Player> squad,
     required DateTime lastUpdated,
   }) = _Team;
 

@@ -1,0 +1,253 @@
+{
+    "area": {
+        "id": 2072,
+        "name": "England",
+        "code": "ENG",
+        "flag": "https://crests.football-data.org/770.svg"
+    },
+    "id": 67,
+    "name": "Newcastle United FC",
+    "shortName": "Newcastle",
+    "tla": "NEW",
+    "crest": "https://crests.football-data.org/67.png",
+    "address": "Sports Direct Arena Newcastle upon Tyne NE1 4ST",
+    "website": "http://www.nufc.co.uk",
+    "founded": 1881,
+    "clubColors": "Black / White",
+    "venue": "St. James' Park",
+    "runningCompetitions": [
+        {
+            "id": 2021,
+            "name": "Premier League",
+            "code": "PL",
+            "type": "LEAGUE",
+            "emblem": "https://crests.football-data.org/PL.png"
+        }
+    ],
+    "coach": {
+        "id": 11594,
+        "firstName": "Eddie",
+        "lastName": null,
+        "name": "Eddie Howe",
+        "dateOfBirth": "1977-11-29",
+        "nationality": "England",
+        "contract": {
+            "start": null,
+            "until": null
+        }
+    },
+    "squad": [
+        {
+            "id": 3310,
+            "name": "Nick Pope",
+            "position": "Goalkeeper",
+            "dateOfBirth": "1992-04-19",
+            "nationality": "England"
+        },
+        {
+            "id": 5048,
+            "name": "Mark Gillespie",
+            "position": "Goalkeeper",
+            "dateOfBirth": "1992-03-27",
+            "nationality": "England"
+        },
+        {
+            "id": 7913,
+            "name": "Karl Darlow",
+            "position": "Goalkeeper",
+            "dateOfBirth": "1990-10-08",
+            "nationality": "England"
+        },
+        {
+            "id": 7914,
+            "name": "Martin Dúbravka",
+            "position": "Goalkeeper",
+            "dateOfBirth": "1989-01-15",
+            "nationality": "Slovakia"
+        },
+        {
+            "id": 88,
+            "name": "Fabian Schär",
+            "position": "Defence",
+            "dateOfBirth": "1991-12-20",
+            "nationality": "Switzerland"
+        },
+        {
+            "id": 1868,
+            "name": "Emil Krafth",
+            "position": "Defence",
+            "dateOfBirth": "1994-08-02",
+            "nationality": "Sweden"
+        },
+        {
+            "id": 3312,
+            "name": "Kieran Trippier",
+            "position": "Defence",
+            "dateOfBirth": "1990-09-19",
+            "nationality": "England"
+        },
+        {
+            "id": 3962,
+            "name": "Matt Targett",
+            "position": "Defence",
+            "dateOfBirth": "1995-09-18",
+            "nationality": "England"
+        },
+        {
+            "id": 3998,
+            "name": "Jamal Lewis",
+            "position": "Defence",
+            "dateOfBirth": "1998-01-25",
+            "nationality": "Northern Ireland"
+        },
+        {
+            "id": 4870,
+            "name": "Dan Burn",
+            "position": "Defence",
+            "dateOfBirth": "1992-05-09",
+            "nationality": "England"
+        },
+        {
+            "id": 7917,
+            "name": "Paul Dummett",
+            "position": "Defence",
+            "dateOfBirth": "1991-09-26",
+            "nationality": "Wales"
+        },
+        {
+            "id": 7919,
+            "name": "Jamaal Lascelles",
+            "position": "Defence",
+            "dateOfBirth": "1993-11-11",
+            "nationality": "England"
+        },
+        {
+            "id": 7928,
+            "name": "Javier Manquillo",
+            "position": "Defence",
+            "dateOfBirth": "1994-05-05",
+            "nationality": "Spain"
+        },
+        {
+            "id": 7930,
+            "name": "Matt Ritchie",
+            "position": "Defence",
+            "dateOfBirth": "1989-09-10",
+            "nationality": "Scotland"
+        },
+        {
+            "id": 7968,
+            "name": "Federico Fernández",
+            "position": "Defence",
+            "dateOfBirth": "1989-02-21",
+            "nationality": "Argentina"
+        },
+        {
+            "id": 81082,
+            "name": "Sven Botman",
+            "position": "Defence",
+            "dateOfBirth": "2000-01-12",
+            "nationality": "Netherlands"
+        },
+        {
+            "id": 118491,
+            "name": "Kelland Watts",
+            "position": "Defence",
+            "dateOfBirth": "1999-11-03",
+            "nationality": "England"
+        },
+        {
+            "id": 1684,
+            "name": "Bruno Guimarães",
+            "position": "Midfield",
+            "dateOfBirth": "1997-11-16",
+            "nationality": "Brazil"
+        },
+        {
+            "id": 4955,
+            "name": "Sean Longstaff",
+            "position": "Midfield",
+            "dateOfBirth": "1997-10-30",
+            "nationality": "England"
+        },
+        {
+            "id": 7798,
+            "name": "Joe Willock",
+            "position": "Midfield",
+            "dateOfBirth": "1999-08-20",
+            "nationality": "England"
+        },
+        {
+            "id": 7929,
+            "name": "Jonjo Shelvey",
+            "position": "Midfield",
+            "dateOfBirth": "1992-02-27",
+            "nationality": "England"
+        },
+        {
+            "id": 7934,
+            "name": "Jacob Murphy",
+            "position": "Midfield",
+            "dateOfBirth": "1995-02-24",
+            "nationality": "England"
+        },
+        {
+            "id": 8247,
+            "name": "Ryan Fraser",
+            "position": "Midfield",
+            "dateOfBirth": "1994-02-24",
+            "nationality": "Scotland"
+        },
+        {
+            "id": 76861,
+            "name": "Miguel Almirón",
+            "position": "Midfield",
+            "dateOfBirth": "1994-02-10",
+            "nationality": "Paraguay"
+        },
+        {
+            "id": 107330,
+            "name": "Elliot Anderson",
+            "position": "Midfield",
+            "dateOfBirth": "2002-11-06",
+            "nationality": "Scotland"
+        },
+        {
+            "id": 128310,
+            "name": "Matthew Longstaff",
+            "position": "Midfield",
+            "dateOfBirth": "2000-03-21",
+            "nationality": "England"
+        },
+        {
+            "id": 8057,
+            "name": "Chris Wood",
+            "position": "Offence",
+            "dateOfBirth": "1991-12-07",
+            "nationality": "New Zealand"
+        },
+        {
+            "id": 8251,
+            "name": "Callum Wilson",
+            "position": "Offence",
+            "dateOfBirth": "1992-02-27",
+            "nationality": "England"
+        },
+        {
+            "id": 8446,
+            "name": "Allan Saint-Maximin",
+            "position": "Offence",
+            "dateOfBirth": "1997-03-12",
+            "nationality": "France"
+        },
+        {
+            "id": 10653,
+            "name": "Joelinton",
+            "position": "Offence",
+            "dateOfBirth": "1996-08-14",
+            "nationality": "Brazil"
+        }
+    ],
+    "staff": [],
+    "lastUpdated": "2022-02-10T19:22:56Z"
+}

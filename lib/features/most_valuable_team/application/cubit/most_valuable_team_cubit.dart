@@ -12,8 +12,12 @@ import 'package:injectable/injectable.dart';
 part 'most_valuable_team_cubit.freezed.dart';
 part 'most_valuable_team_state.dart';
 
+/// {@template most_valuable_team_cubit}
+/// Cubit for most valuable team feature
+/// {@endtemplate}
 @injectable
 class MostValuableTeamCubit extends Cubit<MostValuableTeamState> {
+  /// {@macro most_valuable_team_cubit}
   MostValuableTeamCubit(
     this._getMatches,
     this._getTeam,
@@ -22,10 +26,13 @@ class MostValuableTeamCubit extends Cubit<MostValuableTeamState> {
   final GetMatches _getMatches;
   final GetTeam _getTeam;
 
+  /// Loads the most valuable team
   Future<void> load() async {
     emit(const MostValuableTeamState.loading());
 
     final today = DateTime.now();
+
+    /// API is limited to 10 day periods, split into 3 calls
     final first10 = _getMatches(
       competition: 'PL',
       dateFrom: today.subtract(const Duration(days: 30)),
@@ -52,6 +59,7 @@ class MostValuableTeamCubit extends Cubit<MostValuableTeamState> {
       return;
     }
 
+    /// Disregard matches ending in a draw
     final matches = results.expand((result) => result.get()).where(
           (match) => match.score.winner != MatchWinner.draw,
         );
@@ -72,9 +80,13 @@ class MostValuableTeamCubit extends Cubit<MostValuableTeamState> {
         .key;
 
     final teamResult = await _getTeam(bestId);
+
     teamResult.fold(
       (f) => emit(MostValuableTeamState.failure(f.message)),
-      (team) => emit(MostValuableTeamState.data(team)),
+      (team) => emit(MostValuableTeamState.data(
+        team: team,
+        wins: occurences[team.id]!,
+      )),
     );
   }
 }

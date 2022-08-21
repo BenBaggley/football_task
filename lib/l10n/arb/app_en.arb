@@ -1,6 +1,21 @@
 {
     "appName": "Football MVT",
-    "@appName": {
-        "description": "Name of the application"
-    }
+    "mostValuableHeader": "With {wins} wins in the last 30 days, the MVT of football right now is...",
+    "@mostValuableHeader": {
+        "placeholders": {
+            "wins": {}
+        }
+    },
+    "coachLabel": "Coach",
+    "venueLabel": "Venue",
+    "dateOfBirthLabel": "Date of Birth",
+    "nationalityLabel": "Nationality",
+    "positionLabel": "Position",
+    "nameLabel": "Name",
+    "addressLabel": "Address",
+    "websiteLabel": "Website",
+    "viewMapButton": "View on map",
+    "detailsLabel": "Details",
+    "squadLabel": "Squad",
+    "visitButton": "Visit"
 }

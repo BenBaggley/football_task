@@ -1,9 +1,7 @@
-import 'dart:convert';
-
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:football_mvp/core/data/network_utils.dart';
 import 'package:football_mvp/core/domain/failure.dart';
-import 'package:dartz/dartz.dart';
 import 'package:football_mvp/core/extensions/date_time_format.dart';
 import 'package:football_mvp/features/most_valuable_team/domain/data_sources/football_data_source.dart';
 import 'package:football_mvp/features/most_valuable_team/domain/entities/football_match.dart';
@@ -11,10 +9,14 @@ import 'package:football_mvp/features/most_valuable_team/domain/entities/team.da
 import 'package:football_mvp/features/most_valuable_team/domain/enums/match_status.dart';
 import 'package:injectable/injectable.dart';
 
+/// {@template default_football_data_source}
+/// Default implementation of [FootballDataSource] using [Dio]
+/// {@endtemplate}
 @Injectable(as: FootballDataSource)
 class DefaultFootballDataSource implements FootballDataSource {
   final Dio _dio;
 
+  /// {@macro default_football_data_source}
   const DefaultFootballDataSource(this._dio);
 
   @override
@@ -24,7 +26,7 @@ class DefaultFootballDataSource implements FootballDataSource {
     required DateTime dateTo,
     required MatchStatus status,
   }) {
-    return ioSafe(() async {
+    return catchFailure(() async {
       final result = await _dio.get<Map<String, dynamic>>(
         'v4/matches',
         queryParameters: {
@@ -43,7 +45,7 @@ class DefaultFootballDataSource implements FootballDataSource {
 
   @override
   Future<Either<Failure, Team>> getTeam(int id) {
-    return ioSafe(() async {
+    return catchFailure(() async {
       final result = await _dio.get<Map<String, dynamic>>(
         'v4/teams/$id',
       );
