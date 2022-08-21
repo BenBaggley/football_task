@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bt.football_mvp">
+   
+   <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="football_mvp"
         android:name="${applicationName}"
