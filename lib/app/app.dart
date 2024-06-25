@@ -13,7 +13,7 @@ part 'app_theme.dart';
 part 'colors.dart';
 
 class FootballMVTApp extends StatefulWidget {
-  const FootballMVTApp({Key? key}) : super(key: key);
+  const FootballMVTApp({super.key});
 
   static Future<void> run() async {
     WidgetsFlutterBinding.ensureInitialized();
@@ -44,4 +44,4 @@ class _FootballMVTAppState extends State<FootballMVTApp> {
 }
 
 @injectableInit
-void _initializeDependencies() => $initGetIt(GetIt.I);
+void _initializeDependencies() => GetIt.I.init();

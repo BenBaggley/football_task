@@ -7,7 +7,7 @@ import 'package:football_mvp/features/most_valuable_team/domain/entities/team.da
 /// {@endtemplate}
 class SquadWidget extends StatelessWidget {
   /// {@macro squad_widget}
-  const SquadWidget({Key? key, required this.team}) : super(key: key);
+  const SquadWidget({super.key, required this.team});
 
   /// The team to display.
   final Team team;
@@ -16,14 +16,18 @@ class SquadWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: team.squad.length,
-      itemBuilder: (context, index) => _playerItem(
-        context,
-        team.squad[index],
-      ),
+      itemBuilder: (context, index) => _PlayerItem(team.squad[index]),
     );
   }
+}
 
-  Widget _playerItem(BuildContext context, Player player) {
+class _PlayerItem extends StatelessWidget {
+  const _PlayerItem(this.player);
+
+  final Player player;
+
+  @override
+  Widget build(BuildContext context) {
     return ListTile(
       tileColor: Theme.of(context).colorScheme.surface,
       title: Text(player.name),

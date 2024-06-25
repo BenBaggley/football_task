@@ -6,9 +6,6 @@ ThemeData buildTheme(ThemeData base) {
     textTheme: GoogleFonts.barlowTextTheme(base.textTheme),
     colorScheme: base.colorScheme.copyWith(
       primary: kPrimaryColor,
-      background: base.brightness == Brightness.light
-          ? Colors.white
-          : kSurfaceDarkColor,
       surface: base.brightness == Brightness.light
           ? Colors.white
           : kSurfaceDarkColor,
@@ -16,9 +13,11 @@ ThemeData buildTheme(ThemeData base) {
     scaffoldBackgroundColor: base.brightness == Brightness.light
         ? base.scaffoldBackgroundColor
         : kPrimaryDarkColor,
-    cardColor: base.brightness == Brightness.light
-        ? base.cardColor
-        : kSurfaceDarkColor,
+    cardTheme: base.cardTheme.copyWith(
+      color: base.brightness == Brightness.light
+          ? Colors.white
+          : kSurfaceDarkColor,
+    ),
     appBarTheme: base.appBarTheme.copyWith(
       backgroundColor: kPrimaryColor,
     ),

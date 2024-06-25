@@ -30,7 +30,7 @@ class MostValuableTeamCubit extends Cubit<MostValuableTeamState> {
   Future<void> load() async {
     emit(const MostValuableTeamState.loading());
 
-    final today = DateTime.now();
+    final today = DateTime(2023, 12);
 
     /// API is limited to 10 day periods, split into 3 calls
     final first10 = _getMatches(

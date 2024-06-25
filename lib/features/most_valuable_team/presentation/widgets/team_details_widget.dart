@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 /// {@endtemplate}
 class TeamDetailsWidget extends StatelessWidget {
   /// {@macro team_details_widget}
-  const TeamDetailsWidget({Key? key, required this.team}) : super(key: key);
+  const TeamDetailsWidget({super.key, required this.team});
 
   /// The team to display.
   final Team team;
@@ -18,15 +18,23 @@ class TeamDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       children: [
-        _coachCard(context, team.coach),
-        if (team.venue != null) _venueCard(context, team),
-        if (team.website != null) _websiteCard(context, team.website!),
+        _CoachCard(team.coach),
+        if (team.venue != null) _VenueCard(team),
+        if (team.website != null) _WebsiteCard(team.website!),
       ],
     );
   }
+}
 
-  Widget _coachCard(BuildContext context, Coach coach) {
+class _CoachCard extends StatelessWidget {
+  const _CoachCard(this.coach);
+
+  final Coach coach;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: Padding(
@@ -39,24 +47,24 @@ class TeamDetailsWidget extends StatelessWidget {
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 16),
-            _detailWidget(
-              context,
-              label: context.l10n.nameLabel,
-              value: coach.name,
-            ),
+            _DetailsWidget(label: context.l10n.nameLabel, value: coach.name),
             const SizedBox(height: 4),
-            _detailWidget(
-              context,
-              label: context.l10n.nationalityLabel,
-              value: coach.nationality,
-            ),
+            _DetailsWidget(
+                label: context.l10n.nationalityLabel, value: coach.nationality),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _venueCard(BuildContext context, Team team) {
+class _VenueCard extends StatelessWidget {
+  const _VenueCard(this.team);
+
+  final Team team;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: Padding(
@@ -75,11 +83,8 @@ class TeamDetailsWidget extends StatelessWidget {
             ),
             if (team.address != null) ...[
               const SizedBox(height: 4),
-              _detailWidget(
-                context,
-                label: context.l10n.addressLabel,
-                value: team.address!,
-              ),
+              _DetailsWidget(
+                  label: context.l10n.addressLabel, value: team.address!),
               const SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () => _openMaps(team.address!),
@@ -91,8 +96,15 @@ class TeamDetailsWidget extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _websiteCard(BuildContext context, String website) {
+class _WebsiteCard extends StatelessWidget {
+  const _WebsiteCard(this.website);
+
+  final String website;
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: Padding(
@@ -119,17 +131,24 @@ class TeamDetailsWidget extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _detailWidget(
-    BuildContext context, {
-    required String label,
-    required String value,
-  }) {
+class _DetailsWidget extends StatelessWidget {
+  const _DetailsWidget({
+    required this.label,
+    required this.value,
+  });
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         Text(
           '$label:',
-          style: Theme.of(context).textTheme.caption?.copyWith(
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
                 fontSize: 14,
               ),
         ),
@@ -141,11 +160,11 @@ class TeamDetailsWidget extends StatelessWidget {
       ],
     );
   }
-
-  Future<void> _openMaps(String address) => MapsLauncher.launchQuery(address);
-
-  Future<void> _openWebsite(String website) => launchUrlString(
-        website,
-        mode: LaunchMode.externalApplication,
-      );
 }
+
+Future<void> _openMaps(String address) => MapsLauncher.launchQuery(address);
+
+Future<void> _openWebsite(String website) => launchUrlString(
+      website,
+      mode: LaunchMode.externalApplication,
+    );
